@@ -1,0 +1,221 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+  margin-top: 45px;
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    column-gap: 30px;
+    margin-top: 45px;
+
+    .card__title {
+      position: relative;
+      row-gap: 20px;
+
+      width: 475px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card__action-banner {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      padding: 13px 24px;
+
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.12em;
+      color: #fff;
+      text-transform: uppercase;
+
+      background-color: #ff7931;
+      border-radius: 3px;
+    }
+
+    .card__properties {
+      align-self: end;
+    }
+    .card__icon {
+      width: auto;
+      height: auto;
+    }
+    .card__image img {
+      width: auto;
+      height: 380px;
+      padding: 30px 0;
+    }
+    .card__price {
+      display: flex;
+      flex-direction: column;
+      row-gap: 4px;
+    }
+    .card__old-price {
+      position: relative;
+
+      font-weight: 400;
+      font-size: 30px;
+      text-align: center;
+      color: #000;
+    }
+    .card__old-price::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+
+      width: 132px;
+      height: 1px;
+
+      transform: rotate(-10deg);
+
+      background-color: #666666;
+    }
+    .card__old-price::after {
+      content: " \20BD";
+    }
+    .card__actual-price {
+      font-weight: 700;
+      font-size: 40px;
+      text-align: center;
+      color: #48494d;
+    }
+    .card__actual-price::after {
+      content: " \20BD";
+    }
+    .card__title .card__message {
+      font-weight: 400;
+      font-size: 15px;
+      color: #ff7931;
+
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      text-decoration-color: hsla(21, 100%, 60%, 0.2);
+    }
+    .card__description {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      margin: 0;
+    }
+    .card__description h3 {
+      text-align: start;
+
+      font-weight: 700;
+      font-size: 30px;
+      color: #48494d;
+    }
+    .card__code {
+      margin-top: 12px;
+
+      font-weight: 400;
+      font-size: 15px;
+      color: #000;
+
+      opacity: 0.6;
+    }
+
+    .card__like-grade {
+      display: flex;
+      column-gap: 25px;
+      margin: 25px 0 50px;
+    }
+
+    .card__like {
+      display: flex;
+      align-items: center;
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+
+    .product-info__heading {
+      display: flex;
+      column-gap: 40px;
+    }
+
+    .product-info__heading h4 {
+      padding-right: 25px;
+
+      font-weight: 700;
+      font-size: 20px;
+      color: #48494d;
+    }
+
+    .product-info__heading--active {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 10px;
+      text-decoration-color: #ff7931;
+    }
+
+    .product-info__characteristics {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+
+    .product-info__characteristics ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+    }
+
+    .product-info__characteristics ul li {
+      display: flex;
+      justify-content: space-between;
+      padding: 7px 0;
+
+      font-weight: 400;
+      font-size: 20px;
+      color: #48494d;
+
+      border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
+    }
+
+    .product-info__characteristics ul li span:last-child {
+      display: flex;
+      width: 125px;
+    }
+
+    .product-info__more {
+      align-self: flex-start;
+
+      font-weight: 400;
+      font-size: 14px;
+      color: #ff7931;
+
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      text-decoration-color: rgba(255, 121, 49, 0.2);
+    }
+
+    .card__buy {
+      margin-top: 42px;
+      padding: 17px 28px;
+
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+      color: #fff;
+
+      background-color: #ff7931;
+      border-radius: 3px;
+    }
+  }
+}

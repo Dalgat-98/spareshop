@@ -1,0 +1,20 @@
+.products__pages-list {
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+
+  font-weight: 400;
+  font-size: 18px;
+  color: #a8a8a8;
+}
+
+.products__pages-list li {
+  font-weight: 400;
+  font-size: 18px;
+  color: #a8a8a8;
+}
+
+.products__pages-button--active {
+  padding: 10px 15px;
+  border: 2px solid #ff7931;
+}

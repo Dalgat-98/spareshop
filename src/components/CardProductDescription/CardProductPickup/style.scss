@@ -1,0 +1,253 @@
+.pickup {
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 50px;
+
+  .pickup__form {
+    display: grid;
+    grid-template-columns: 230px 160px 140px 120px 150px;
+    grid-template-areas: "search search radio radio .";
+    column-gap: 30px;
+
+    justify-content: space-between;
+    align-items: center;
+
+    .form__options-search {
+      grid-area: search;
+
+      label {
+        margin-right: 16px;
+
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 17px;
+        color: #000;
+      }
+
+      input {
+        width: 313px;
+        height: 33px;
+        padding: 9px 17px;
+
+        background-color: #f4f4f6;
+        border-radius: 50px;
+      }
+    }
+    .form__options-radio {
+      grid-area: radio;
+
+      label {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 17px;
+        color: #000;
+
+        opacity: 0.7;
+      }
+
+      input: {
+        display: none;
+      }
+
+      div label:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 5px;
+
+        width: 12px;
+        height: 12px;
+
+        border: 1.5px solid #cdcdcd;
+      }
+
+      div input[type="radio"]:checked + label:before {
+        border: 1.5px solid #ff7931;
+        border-radius: 2px;
+      }
+
+      div input[type="radio"]:checked + label:after {
+        content: "";
+        position: absolute;
+        left: 2px;
+        top: 7px;
+        display: block;
+
+        width: 8px;
+        height: 8px;
+
+        background-color: #ff7931;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  .pickup__shops {
+    display: grid;
+    row-gap: 40px;
+
+    .pickup__shops-header {
+      display: grid;
+      grid-template-columns: 230px 160px 140px 120px 150px;
+      grid-template-areas: "adres worked available count .";
+      grid-column: auto;
+
+      justify-content: space-between;
+
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 20px;
+      color: #000;
+
+      .adres {
+        grid-area: adres;
+      }
+      .worked {
+        grid-area: worked;
+      }
+      .available {
+        grid-area: available;
+      }
+      .count {
+        grid-area: count;
+      }
+    }
+
+    .pickup__shops-list {
+      display: grid;
+      row-gap: 40px;
+
+      .pickup__shops-item {
+        position: relative;
+        display: grid;
+        grid-template-columns: 230px 160px 140px 120px 150px;
+        grid-template-areas: "adres worked available count button";
+
+        justify-content: space-between;
+        align-items: start;
+
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        color: #000;
+
+        opacity: 0.7;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: calc(100% + 20px);
+
+          width: 100%;
+          height: 1px;
+
+          background-color: #000;
+
+          opacity: 0.1;
+        }
+
+        .adres {
+          grid-area: adres;
+          line-height: 150%;
+        }
+        .worked {
+          grid-area: worked;
+
+          display: flex;
+          flex-direction: column;
+          row-gap: 10px;
+
+          p {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+        .available {
+          grid-area: available;
+        }
+        .count {
+          grid-area: count;
+        }
+
+        .pickup__shops-button {
+          display: block;
+          width: fit-content;
+          justify-self: flex-end;
+          padding: 10px 40px;
+
+          font-family: var(--font-family);
+          font-weight: 700;
+          font-size: 13px;
+          letter-spacing: 0.12em;
+          color: #fff;
+          text-transform: uppercase;
+
+          background-color: #ff7931;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .pickup {
+    row-gap: 30px;
+
+    .pickup__form {
+      grid-template-columns: 180px 120px 110px 60px 100px;
+      grid-template-areas: "search search radio radio radio";
+      column-gap: 10px;
+
+      .form__options-search {
+        label {
+          margin-right: 14px;
+
+          font-size: 16px;
+        }
+
+        input {
+          width: 260px;
+          height: 30px;
+          padding: 8px 12px;
+        }
+      }
+      .form__options-radio {
+        label {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .pickup__shops {
+      row-gap: 30px;
+
+      .pickup__shops-header {
+        grid-template-columns: 180px 120px 110px 60px 100px;
+        justify-content: space-between;
+
+        font-size: 18px;
+      }
+
+      .pickup__shops-list {
+        row-gap: 30px;
+
+        .pickup__shops-item {
+          grid-template-columns: 180px 120px 110px 60px 100px;
+          grid-template-areas: "adres worked available count button";
+
+          justify-content: space-between;
+          align-items: start;
+
+          font-size: 14px;
+
+          .pickup__shops-button {
+            padding: 10px 20px;
+
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

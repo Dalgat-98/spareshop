@@ -1,0 +1,275 @@
+.popular-cards {
+  position: none;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+  margin-top: 80px;
+  row-gap: 26px;
+
+  .popular-cards__headline {
+    font-weight: 700;
+    font-size: 25px;
+    color: #48494d;
+  }
+
+  .popular-cards__list {
+    display: flex;
+    column-gap: 40px;
+  }
+
+  .popular-cards__list li {
+    font-weight: 400;
+    font-size: 15px;
+    color: #48494d;
+  }
+
+  .popular-cards__item--active button {
+    text-decoration: underline;
+    text-underline-offset: 12px;
+    text-decoration-color: #ff7931;
+  }
+
+  .popular-cards__products {
+    position: relative;
+
+    margin-top: 10px;
+  }
+
+  .popular-cards__visiable {
+    position: relative;
+    width: 1170px;
+    height: 403px;
+
+    overflow: hidden;
+  }
+  .popular-cards__visiable-contaner {
+    position: absolute;
+    top: 0;
+
+    display: flex;
+    column-gap: 30px;
+
+    transition: left 0.4s;
+  }
+
+  .popular-cards__button {
+    position: absolute;
+    top: calc(50% - 18px);
+    z-index: 99;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+
+    border-radius: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .popular-cards__button:hover {
+    opacity: 0.8;
+  }
+
+  .popular-cards__button-left {
+    left: -66px;
+  }
+
+  .popular-cards__button-right {
+    right: -66px;
+  }
+
+  .popular-cards__button-left img {
+    transform: rotate(-180deg);
+  }
+
+  .popular-cards__button-more {
+    padding: 17px 43px 15px;
+    margin-top: 10px;
+    max-width: 252px;
+    align-self: center;
+
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #bdbec2;
+    background-color: #f0f0f4;
+  }
+
+  .popular-cards__button-more:hover {
+    opacity: 0.8;
+  }
+
+  @media (max-width: 1368px) {
+    .popular-cards {
+      margin-top: 70px;
+    }
+
+    .popular-cards__headline {
+      font-size: 24px;
+    }
+
+    .popular-cards__list {
+      column-gap: 36px;
+    }
+
+    .popular-cards__list li {
+      font-size: 14px;
+    }
+
+    .popular-cards__item--active button {
+      text-underline-offset: 8px;
+    }
+
+    .popular-cards__products {
+      max-width: 1120px;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
+    .popular-cards__visiable {
+      width: 100%;
+    }
+    .popular-cards__visiable-contaner {
+      column-gap: 30px;
+    }
+
+    .popular-cards__button {
+      top: calc(50% - 16px);
+
+      width: 32px;
+      height: 32px;
+    }
+
+    .popular-cards__button-left {
+      left: -50px;
+    }
+
+    .popular-cards__button-right {
+      right: -50px;
+    }
+
+    .popular-cards__button-more {
+      padding: 16px 42px;
+
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .popular-cards {
+      margin-top: 60px;
+    }
+
+    .popular-cards__headline {
+      font-size: 20px;
+    }
+
+    .popular-cards__list {
+      column-gap: 26px;
+    }
+
+    .popular-cards__list li {
+      font-size: 14px;
+    }
+
+    .popular-cards__item--active button {
+      text-underline-offset: 8px;
+    }
+
+    .popular-cards__visiable-contaner {
+      column-gap: 30px;
+    }
+
+    .popular-cards__button-left {
+      left: -50px;
+    }
+
+    .popular-cards__button-right {
+      right: -50px;
+    }
+
+    .popular-cards__button-more {
+      padding: 16px 42px;
+
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .popular-cards {
+      margin-top: 50px;
+    }
+    .popular-cards__headline {
+      font-size: 16px;
+    }
+
+    .popular-cards__list {
+      column-gap: 12px;
+    }
+
+    .popular-cards__list li {
+      font-size: 12px;
+    }
+
+    .popular-cards__visiable-contaner {
+      column-gap: 30px;
+    }
+
+    .popular-cards__button-left {
+      left: -50px;
+    }
+
+    .popular-cards__button-right {
+      right: -50px;
+    }
+
+    .popular-cards__button-more {
+      padding: 12px 36px;
+
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .popular-cards {
+      max-width: 300px;
+      padding: 0 10px;
+      margin-top: 40px;
+    }
+    .popular-cards__headline {
+      font-size: 16px;
+    }
+
+    .popular-cards__list {
+      width: 100%;
+
+      overflow: scroll;
+      column-gap: 12px;
+    }
+
+    .popular-cards__list li {
+      font-size: 12px;
+    }
+
+    .popular-cards__products {
+      width: 270px;
+      margin: 0 auto;
+    }
+
+    .popular-cards__button {
+      display: none;
+    }
+
+    .popular-cards__button-more {
+      padding: 12px 28px;
+
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.product-title-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 0;
+
+  transform: rotate(90deg);
+}
+
+.product-title-banner p {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  transform: rotate(-180deg) translateX(1px) translateY(24px);
+  padding: 5px 15px;
+  background: linear-gradient(91deg, #9710e9 0%, #fd8d43 100%);
+
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+}

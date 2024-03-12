@@ -1,17 +1,51 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import "./styles/main.scss";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import ErrorPage from "./components/ErrorPage/ErrorPage";
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Home from "./pages/Home";
+import Catalog from "./pages/Catalog";
+import CardProduct from "./pages/CardProduct";
+import CardProductInformation from "./components/CardProductDescription/CardProductInformation/CardProductInformation";
+import CardProductCharacteristicn from "./components/CardProductDescription/CardProductCharacteristicn/CardProductCharacteristicn";
+import CardProductPickup from "./components/CardProductDescription/CardProductPickup/CardProductPickup";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/catalog",
+    element: <Catalog />,
+  },
+  {
+    path: "/cardproduct",
+    element: <CardProduct />,
+    children: [
+      {
+        path: "/cardproduct/cardProductInformation",
+        element: <CardProductInformation />,
+      },
+      {
+        path: "/cardproduct/cardProductCharacteristics",
+        element: <CardProductCharacteristicn />,
+      },
+      {
+        path: "/cardproduct/cardProductPickup",
+        element: <CardProductPickup />,
+      },
+    ],
+  },
+]);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

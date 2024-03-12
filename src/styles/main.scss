@@ -1,0 +1,69 @@
+@import "./normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+:root {
+  --maxWidth-desk: 1200px;
+  --maxWidth-table: 996px;
+  --maxWidth-bigMob: 700px;
+  --maxWidth-Mob: 320px;
+
+  --font-family: "Lato", sans-serif;
+  --second-family: "Barlow", sans-serif;
+}
+
+html,
+body {
+  min-height: 100vh;
+
+  font-family: var(--font-family);
+  font-size: 20px;
+  letter-spacing: -0.5px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a,
+a:link,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+  /* display: inline-block; */
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+button,
+input[type="submit"] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input::-ms-clear {
+  display: none;
+}
