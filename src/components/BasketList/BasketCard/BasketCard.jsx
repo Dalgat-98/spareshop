@@ -1,5 +1,7 @@
 import "./style.scss";
 
+import { Link } from "react-router-dom";
+
 const BasketCard = ({
   product,
   deleteProduct,
@@ -11,14 +13,16 @@ const BasketCard = ({
 
   return (
     <div className="basket-card">
-      <figure>
-        <img
-          src={"./img/catalog/" + img}
-          alt=""
-          className="basket-card__image"
-        />
-        <figcaption className="basket-card__product-name">{name}</figcaption>
-      </figure>
+      <Link to={"/cardproduct"}>
+        <figure>
+          <img
+            src={"./img/catalog/" + img}
+            alt=""
+            className="basket-card__image"
+          />
+          <figcaption className="basket-card__product-name">{name}</figcaption>
+        </figure>
+      </Link>
       <div className="basket-card__panel">
         <div className="basket-card__price">
           <p className="basket-card__price-product">{price}</p>

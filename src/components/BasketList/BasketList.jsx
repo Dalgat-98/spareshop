@@ -1,10 +1,10 @@
 import "./style.scss";
 
-import BasketCard from "./BasketCard/BasketCard";
 import { useEffect, useState } from "react";
-import data from "./../Data/dataBasket.js";
+
+import BasketCard from "./BasketCard/BasketCard";
 import BasketTotal from "./BasketTotal/BasketTotal.jsx";
-import { Link } from "react-router-dom";
+import data from "./../Data/dataBasket.js";
 
 const BasketList = () => {
   const [productsBasket, setProductsBasket] = useState(data);
@@ -77,16 +77,14 @@ const BasketList = () => {
   const listProducts = productsBasket.map((product) => {
     return (
       <li className="basket__item">
-        <Link to={"/cardproduct"}>
-          <BasketCard
-            key={product.id}
-            product={product}
-            deleteProduct={deleteProduct}
-            increaseCount={increaseCount}
-            decreaseCount={decreaseCount}
-            changeCount={changeCount}
-          />
-        </Link>
+        <BasketCard
+          key={product.id}
+          product={product}
+          deleteProduct={deleteProduct}
+          increaseCount={increaseCount}
+          decreaseCount={decreaseCount}
+          changeCount={changeCount}
+        />
       </li>
     );
   });
