@@ -3,7 +3,7 @@ import "./style.scss";
 const CardProductCharacteristicn = () => {
   return (
     <section>
-      <h3>Characteristicn</h3>
+      <h3>Characteristics</h3>
     </section>
   );
 };

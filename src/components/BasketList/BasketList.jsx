@@ -4,6 +4,7 @@ import BasketCard from "./BasketCard/BasketCard";
 import { useEffect, useState } from "react";
 import data from "./../Data/dataBasket.js";
 import BasketTotal from "./BasketTotal/BasketTotal.jsx";
+import { Link } from "react-router-dom";
 
 const BasketList = () => {
   const [productsBasket, setProductsBasket] = useState(data);
@@ -14,7 +15,10 @@ const BasketList = () => {
 
   useEffect(() => {
     setTotalBasket({
-      price: productsBasket.reduce((prev, curr) => prev + curr.totalPrice, 0),
+      price: productsBasket.reduce(
+        (prev, curr) => prev + curr.price * curr.count,
+        0
+      ),
       count: productsBasket.reduce((prev, curr) => prev + curr.count, 0),
     });
   }, [productsBasket]);
@@ -73,14 +77,16 @@ const BasketList = () => {
   const listProducts = productsBasket.map((product) => {
     return (
       <li className="basket__item">
-        <BasketCard
-          key={product.id}
-          product={product}
-          deleteProduct={deleteProduct}
-          increaseCount={increaseCount}
-          decreaseCount={decreaseCount}
-          changeCount={changeCount}
-        />
+        <Link to={"/cardproduct"}>
+          <BasketCard
+            key={product.id}
+            product={product}
+            deleteProduct={deleteProduct}
+            increaseCount={increaseCount}
+            decreaseCount={decreaseCount}
+            changeCount={changeCount}
+          />
+        </Link>
       </li>
     );
   });
@@ -90,7 +96,7 @@ const BasketList = () => {
       <h1 className="basked__heading">Корзина</h1>
       <ul className="basket__list">
         {listProducts.length > 0 ? listProducts : <h2>Корзина пуста</h2>}
-        <BasketTotal totalBasket={totalBasket} />
+        {totalBasket.price > 0 && <BasketTotal totalBasket={totalBasket} />}
       </ul>
     </section>
   );

@@ -13,11 +13,11 @@ const CardProductDescription = () => {
   const cardProductInfoNavList = {
     cardProductInformation: "О товаре",
     cardProductCharacteristics: "Характеристики",
-    cardProductReviews: "Отзывы",
+    // cardProductReviews: "Отзывы",
     cardProductPickup: "Самовывоз",
-    cardProductDelivery: "Доставка",
-    cardProductServices: "Услуги",
-    cardProductBusiness: "Бизнесу",
+    // cardProductDelivery: "Доставка",
+    // cardProductServices: "Услуги",
+    // cardProductBusiness: "Бизнесу",
   };
 
   const cardProductInfoNavLi = [];
@@ -25,19 +25,17 @@ const CardProductDescription = () => {
   for (let item in cardProductInfoNavList) {
     cardProductInfoNavLi.push(
       <li key={cardProductInfoNavLi[item]}>
-        {item === activeCardDescription ? (
-          <Link to={`${item}`} className="nav__link nav__link--active">
-            {cardProductInfoNavList[item]}
-          </Link>
-        ) : (
-          <Link
-            to={`${item}`}
-            className="nav__link"
-            onClick={() => setActiveCardDescription(item)}
-          >
-            {cardProductInfoNavList[item]}
-          </Link>
-        )}
+        <Link
+          to={`${item}`}
+          className={
+            item === activeCardDescription
+              ? "nav__link nav__link--active"
+              : "nav__link"
+          }
+          onClick={() => setActiveCardDescription(item)}
+        >
+          {cardProductInfoNavList[item]}
+        </Link>
       </li>
     );
   }

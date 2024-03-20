@@ -7,7 +7,7 @@ const BasketCard = ({
   decreaseCount,
   changeCount,
 }) => {
-  const { id, img, name, price, priceTotal, count } = product;
+  const { id, img, name, price, count } = product;
 
   return (
     <div className="basket-card">
@@ -22,7 +22,7 @@ const BasketCard = ({
       <div className="basket-card__panel">
         <div className="basket-card__price">
           <p className="basket-card__price-product">{price}</p>
-          <p className="basket-card__price-all">{priceTotal}</p>
+          <p className="basket-card__price-all">{price * count}</p>
         </div>
         <div className="basket-card__count-product">
           <button
