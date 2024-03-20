@@ -1,0 +1,14 @@
+.basket {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+  margin-top: 25px;
+
+  .basket__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

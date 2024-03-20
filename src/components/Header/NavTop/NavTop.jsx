@@ -41,9 +41,11 @@ const NavTop = () => {
             <button>
               <img src="/img/icon/account.svg" alt="accountIcon" />
             </button>
-            <button>
-              <img src="/img/icon/basket-goods.svg" alt="basketGoods" />
-            </button>
+            <Link to="/basketlist">
+              <button>
+                <img src="/img/icon/basket-goods.svg" alt="basketGoods" />
+              </button>
+            </Link>
           </div>
         </li>
       </ul>

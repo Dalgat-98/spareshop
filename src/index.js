@@ -12,6 +12,7 @@ import CardProduct from "./pages/CardProduct";
 import CardProductInformation from "./components/CardProductDescription/CardProductInformation/CardProductInformation";
 import CardProductCharacteristicn from "./components/CardProductDescription/CardProductCharacteristicn/CardProductCharacteristicn";
 import CardProductPickup from "./components/CardProductDescription/CardProductPickup/CardProductPickup";
+import Basket from "./pages/Basket";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
         element: <CardProductPickup />,
       },
     ],
+  },
+  {
+    path: "/basketlist",
+    element: <Basket />,
   },
 ]);
 

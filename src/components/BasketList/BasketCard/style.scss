@@ -1,0 +1,85 @@
+.basket-card {
+  display: grid;
+  grid-template-columns: 370px 370px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 10px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+
+  figure {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .basket-card__image {
+      height: 100px;
+    }
+    .basket-card__product-name {
+    }
+  }
+
+  .basket-card__panel {
+    display: grid;
+    grid-template-columns: 210px 100px 60px;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+
+    .basket-card__price {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      .basket-card__price-product {
+      }
+      .basket-card__price-all {
+      }
+    }
+    .basket-card__count-product {
+      display: flex;
+      align-items: center;
+
+      .basket-card__count-buttons {
+        position: relative;
+        padding: 10px;
+
+        &::before,
+        &::after {
+          position: absolute;
+          content: "";
+          top: calc(50% - 1px);
+          left: calc(50% - 5px);
+
+          width: 10px;
+          height: 2px;
+
+          background-color: #33a0ff;
+        }
+      }
+
+      .basket-card__count-plus::after {
+        transform: rotate(90deg);
+      }
+
+      input {
+        width: 40px;
+        height: 30px;
+        padding: 5px;
+        text-align: center;
+      }
+    }
+
+    .basket-card__delete-buttons {
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

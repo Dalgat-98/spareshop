@@ -20,24 +20,16 @@ const NavBottom = () => {
   const changeActiveOptions = (id) => setActiveItemMenu(id);
 
   const listMenu = dataMenu.map((item, id) => {
-    if (activeItemMenu === id) {
-      return (
-        <li key={id} className="nav-bottom__item">
-          <Link
-            to={"/catalog"}
-            className="nav-bottom__link nav-bottom__link--active"
-          >
-            {item}
-          </Link>
-        </li>
-      );
-    }
     return (
       <li key={id} className="nav-bottom__item">
         <Link
-          // to={"/catalog"}
+          to={"/catalog"}
+          className={
+            activeItemMenu === id
+              ? "nav-bottom__link nav-bottom__link--active"
+              : "nav-bottom__link"
+          }
           onClick={() => changeActiveOptions(id)}
-          className="nav-bottom__link"
         >
           {item}
         </Link>
